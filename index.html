@@ -1,0 +1,50 @@
+<h1>EduHub Upload & Dashboard</h1>
+
+<form id="uploadForm" enctype="multipart/form-data" method="POST" action="/upload">
+  <label for="subject">Subject:</label>
+  <select name="subject" id="subject" required>
+    <option value="Chemistry">Chemistry</option>
+    <option value="Physics">Physics</option>
+    <option value="Math">Math</option>
+  </select>
+
+  <input type="file" name="uploadFile" required />
+  <input type="hidden" name="uploader" value="Danish" />
+  <button type="submit">Upload</button>
+</form>
+<div id="uploadStatus"></div>
+
+<h2>Uploaded Materials</h2>
+<label for="subjectFilter">Subject:</label>
+<select id="subjectFilter">
+  <option value="all">All</option>
+  <option value="Chemistry">Chemistry</option>
+  <option value="Physics">Physics</option>
+  <option value="Math">Math</option>
+</select>
+
+<label for="typeFilter">File Type:</label>
+<select id="typeFilter">
+  <option value="all">All</option>
+  <option value="pdf">PDF</option>
+  <option value="docx">Word</option>
+</select>
+
+<table id="fileTable">
+  <thead>
+    <tr>
+      <th>Icon</th>
+      <th>Filename</th>
+      <th>Subject</th>
+      <th>Uploader</th>
+      <th>Timestamp</th>
+      <th>Preview</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="script.js"></script>
