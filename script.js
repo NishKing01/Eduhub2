@@ -36,4 +36,23 @@ function renderTable(data) {
       <td>${getIcon(file.filename)}</td>
       <td><a href="/${file.subject}/${file.filename}" target="_blank">${file.filename}</a></td>
       <td>${file.subject}</td>
-      <td>${file.uploader}</
+      <td>${file.uploader}</td>
+      <td>${file.timestamp}</td>
+      <td>${previewIcon}</td>
+      <td><button onclick="deleteFile('${file.subject}', '${file.filename}')">🗑️ Delete</button></td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+fetch("/metadata")
+  .then(res => res.json())
+  .then(data => {
+    renderTable(data);
+    document.getElementById("subjectFilter").addEventListener("change", () => filterTable(data));
+    document.getElementById("typeFilter").addEventListener("change", () => filterTable(data));
+  });
+
+function filterTable(data) {
+  const subject = document.getElementById("subjectFilter").value;
+  const type = document.getElementById("
