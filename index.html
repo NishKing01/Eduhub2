@@ -1,50 +1,88 @@
-<h1>EduHub Upload & Dashboard</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduHub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
-<form id="uploadForm" enctype="multipart/form-data" method="POST" action="/upload">
-  <label for="subject">Subject:</label>
-  <select name="subject" id="subject" required>
-    <option value="Chemistry">Chemistry</option>
-    <option value="Physics">Physics</option>
-    <option value="Math">Math</option>
-  </select>
+  <!-- 🧭 Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#learning">Learning</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <input type="file" name="uploadFile" required />
-  <input type="hidden" name="uploader" value="Danish" />
-  <button type="submit">Upload</button>
-</form>
-<div id="uploadStatus"></div>
+  <!-- 👋 Welcome Section -->
+  <section id="about">
+    <h1>Welcome to EduHub</h1>
+    <p>EduHub is a space where I share my hands-on tech projects and learning resources in electronics, automation, and science.</p>
+  </section>
 
-<h2>Uploaded Materials</h2>
-<label for="subjectFilter">Subject:</label>
-<select id="subjectFilter">
-  <option value="all">All</option>
-  <option value="Chemistry">Chemistry</option>
-  <option value="Physics">Physics</option>
-  <option value="Math">Math</option>
-</select>
+  <!-- 📤 Upload Form -->
+  <section id="learning">
+    <h2>Upload Learning Material</h2>
+    <form id="uploadForm" enctype="multipart/form-data" method="POST" action="/upload">
+      <label for="subject">Subject:</label>
+      <select name="subject" id="subject" required>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Physics">Physics</option>
+        <option value="Math">Math</option>
+      </select>
 
-<label for="typeFilter">File Type:</label>
-<select id="typeFilter">
-  <option value="all">All</option>
-  <option value="pdf">PDF</option>
-  <option value="docx">Word</option>
-</select>
+      <input type="file" name="uploadFile" required />
+      <input type="hidden" name="uploader" value="Danish" />
+      <button type="submit">Upload</button>
+    </form>
+    <div id="uploadStatus"></div>
+  </section>
 
-<table id="fileTable">
-  <thead>
-    <tr>
-      <th>Icon</th>
-      <th>Filename</th>
-      <th>Subject</th>
-      <th>Uploader</th>
-      <th>Timestamp</th>
-      <th>Preview</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+  <!-- 📊 Dashboard -->
+  <section id="dashboard">
+    <h2>Uploaded Materials</h2>
+    <label for="subjectFilter">Subject:</label>
+    <select id="subjectFilter">
+      <option value="all">All</option>
+      <option value="Chemistry">Chemistry</option>
+      <option value="Physics">Physics</option>
+      <option value="Math">Math</option>
+    </select>
 
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="script.js"></script>
+    <label for="typeFilter">File Type:</label>
+    <select id="typeFilter">
+      <option value="all">All</option>
+      <option value="pdf">PDF</option>
+      <option value="docx">Word</option>
+    </select>
+
+    <table id="fileTable">
+      <thead>
+        <tr>
+          <th>Icon</th>
+          <th>Filename</th>
+          <th>Subject</th>
+          <th>Uploader</th>
+          <th>Timestamp</th>
+          <th>Preview</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- 📞 Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach out to collaborate or ask questions about my projects!</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
